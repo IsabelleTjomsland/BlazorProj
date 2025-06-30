@@ -1,57 +1,115 @@
 @page "/shifts"
 @inject HttpClient Http
 
+<style>
+    .week-container {
+        display: flex;
+        gap: 10px;
+        overflow-x: auto;
+        padding: 10px 0;
+    }
+
+    .day-column {
+        min-width: 200px;
+        flex-shrink: 0;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #ffffff;
+    }
+
+    .day-column h4 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .shift-card {
+        background-color: #ffffff;
+        border: 1px solid #ffffff;
+        border-radius: 5px;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .shift-card h3 {
+        font-size: 14px;
+        margin: 0 0 5px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+</style>
+
 <h2>Skift och Anställda</h2>
 
-@if (shifts == null)
+@if (groupedShifts.Count == 0)
 {
-    <p><em>Loading...</em></p>
+    <p><em>Laddar...</em></p>
 }
 else
 {
-    @foreach (var shift in shifts)
-    {
-        <div class="shift-card"
-             style="margin-bottom:20px; padding:10px; border:1px solid #ccc; border-radius:5px;
-                    background-color:@GetShiftColor(shift.ShiftType);">
-            <h3>@shift.Description (@shift.StartTime - @shift.EndTime)</h3>
-            <p><strong>Datum:</strong> @shift.ShiftDate.ToShortDateString()</p>
-            <p><strong>Typ:</strong> @shift.ShiftType</p>
-            <p><strong>Anställda som jobbar på detta skift:</strong></p>
+    <div class="week-container">
+        @foreach (var day in groupedShifts)
+        {
+            <div class="day-column">
+                <h4>@day.Key.ToString("dddd", new System.Globalization.CultureInfo("sv-SE"))<br />@day.Key.ToShortDateString()</h4>
 
-            @if (shift.Employees.Count == 0)
-            {
-                <p><em>Inga anställda schemalagda för detta skift.</em></p>
-            }
-            else
-            {
-                <ul>
-                    @foreach (var emp in shift.Employees)
-                    {
-                        <li>@emp.FullName (@emp.Role)</li>
-                    }
-                </ul>
-            }
-        </div>
-    }
+                @foreach (var shift in day.Value)
+                {
+                    <div class="shift-card" style="background-color:@GetShiftColor(shift.ShiftType);">
+                        <h3>@shift.Description<br />(@shift.StartTime - @shift.EndTime)</h3>
+                        <p><strong>Typ:</strong> @shift.ShiftType</p>
+                        <p><strong>Anställda:</strong></p>
+
+                        @if (shift.Employees.Count == 0)
+                        {
+                            <p><em>Inga anställda.</em></p>
+                        }
+                        else
+                        {
+                            <ul>
+                                @foreach (var emp in shift.Employees)
+                                {
+                                    <li>@emp.FullName (@emp.Role)</li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                }
+            </div>
+        }
+    </div>
 }
 
 @code {
     private List<ShiftWithEmployeesDto>? shifts;
+    private Dictionary<DateTime, List<ShiftWithEmployeesDto>> groupedShifts = new();
 
     protected override async Task OnInitializedAsync()
     {
         shifts = await Http.GetFromJsonAsync<List<ShiftWithEmployeesDto>>("api/shifts");
+
+        if (shifts != null)
+        {
+            groupedShifts = shifts
+                .GroupBy(s => s.ShiftDate.Date)
+                .OrderBy(g => g.Key)
+                .ToDictionary(g => g.Key, g => g.ToList());
+        }
     }
 
     private string GetShiftColor(string shiftType)
     {
         return shiftType switch
         {
-            "Dag" => "#D4EDDA",     // ljusgrön
-            "Kväll" => "#FFF3CD",   // ljusgul
-            "Natt" => "#D1ECF1",    // ljusblå
-            _ => "#F8F9FA"          // neutral grå/vit
+            "Dag" => "#D4EDDA",     // Ljusgrön
+            "Kväll" => "#FFF3CD",   // Ljusgul
+            "Natt" => "#D1ECF1",    // Ljusblå
+            _ => "#F8F9FA"          // Neutral grå/vit
         };
     }
 
@@ -62,11 +120,11 @@ else
         public string StartTime { get; set; } = string.Empty;
         public string EndTime { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public string ShiftType { get; set; } = string.Empty; // 👈 viktig!
-        public List<EmployeeDto> Employees { get; set; } = new List<EmployeeDto>();
+        public string ShiftType { get; set; } = string.Empty;
+        public List<EmployeeCreateDto> Employees { get; set; } = new List<EmployeeCreateDto>();
     }
 
-    public class EmployeeDto
+    public class EmployeeCreateDto
     {
         public int EmployeeID { get; set; }
         public string FullName { get; set; } = string.Empty;

@@ -22,58 +22,58 @@ namespace Bemanning_System.Backend.Controllers
 
         // GET: api/shifts
         [HttpGet]
-        public async Task<IActionResult> GetAllShifts()
+        public async Task<IActionResult> GetShiftsWithEmployees()
         {
-            var shiftsWithEmployees = await _context.Shifts
+            var shifts = await _context.Shifts
                 .Include(s => s.Schedules)
                     .ThenInclude(sc => sc.Employee)
                 .ToListAsync();
 
-            var shiftDtos = shiftsWithEmployees
-                .SelectMany(s => s.Schedules.Select(sc =>
-                {
-                    var shiftType = GetShiftType(s.StartTime);
-                    return new ShiftDto
+            var result = shifts.Select(s => new ShiftWithEmployeesDto
+            {
+                ShiftID = s.ShiftID,
+                ShiftDate = s.ShiftDate,
+                StartTime = FormatTime(s.StartTime),
+                EndTime = FormatTime(s.EndTime),
+                Description = s.Description,
+                Employees = s.Schedules
+                    .Where(sc => sc.Employee != null)
+                    .Select(sc => new EmployeeCreateDto
                     {
-                        ShiftID = s.ShiftID,
-                        ShiftDate = s.ShiftDate,
-                        StartTime = FormatTime(s.StartTime),
-                        EndTime = FormatTime(s.EndTime),
-                        Description = s.Description,
-                        EmployeeName = $"{sc.Employee.FirstName} {sc.Employee.LastName}",
-                        Role = sc.Employee.Role,
-                        ShiftType = shiftType,
-                        Color = GetShiftColor(shiftType) // 🎨 Färg
-                    };
-                }))
-                .ToList();
+                        EmployeeID = sc.Employee!.EmployeeID,
+                        FullName = $"{sc.Employee.FirstName} {sc.Employee.LastName}",
+                        Role = sc.Employee.Role
+                    })
+                    .ToList()
+            }).ToList();
 
-            return Ok(shiftDtos);
+            return Ok(result);
         }
 
         private string FormatTime(TimeSpan time)
         {
             return time.ToString(@"hh\:mm");
         }
+    }
+    
 
-        private string GetShiftType(TimeSpan startTime)
-        {
-            if (startTime.Hours >= 6 && startTime.Hours < 14)
-                return "Dag";
-            if (startTime.Hours >= 14 && startTime.Hours < 22)
-                return "Kväll";
-            return "Natt";
-        }
+    public class ShiftWithEmployeesDto
+    {
+        public int ShiftID { get; set; }
+        public DateTime ShiftDate { get; set; }
+        public string StartTime { get; set; } = string.Empty;
+        public string EndTime { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
 
-        private string GetShiftColor(string shiftType)
-        {
-            return shiftType switch
-            {
-                "Dag" => "#A8E6CF",    // Grön
-                "Kväll" => "#FFD3B6",  // Orange
-                "Natt" => "#DCE3FF",   // Blå/lila
-                _ => "#FFFFFF"         // Vit
-            };
-        }
+        public List<EmployeeCreateDto> Employees { get; set; } = new List<EmployeeCreateDto>();
+    }
+
+    public class EmployeeCreateDto
+    {
+        public int EmployeeID { get; set; }
+        public string FullName { get; set; } = string.Empty;
+        public string Role { get; set; } = string.Empty;
+
+        
     }
 }

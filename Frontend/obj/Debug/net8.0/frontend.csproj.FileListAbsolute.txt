@@ -1029,3 +1029,4 @@ C:\Bemanning_System\Frontend\obj\Debug\net8.0\frontend.dll
 C:\Bemanning_System\Frontend\obj\Debug\net8.0\refint\frontend.dll
 C:\Bemanning_System\Frontend\obj\Debug\net8.0\frontend.pdb
 C:\Bemanning_System\Frontend\obj\Debug\net8.0\ref\frontend.dll
+C:\Bemanning_System\Frontend\obj\Debug\net8.0\frontend.sourcelink.json
