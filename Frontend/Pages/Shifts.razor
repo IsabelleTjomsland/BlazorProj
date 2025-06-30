@@ -1,0 +1,75 @@
+@page "/shifts"
+@inject HttpClient Http
+
+<h2>Skift och Anställda</h2>
+
+@if (shifts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @foreach (var shift in shifts)
+    {
+        <div class="shift-card"
+             style="margin-bottom:20px; padding:10px; border:1px solid #ccc; border-radius:5px;
+                    background-color:@GetShiftColor(shift.ShiftType);">
+            <h3>@shift.Description (@shift.StartTime - @shift.EndTime)</h3>
+            <p><strong>Datum:</strong> @shift.ShiftDate.ToShortDateString()</p>
+            <p><strong>Typ:</strong> @shift.ShiftType</p>
+            <p><strong>Anställda som jobbar på detta skift:</strong></p>
+
+            @if (shift.Employees.Count == 0)
+            {
+                <p><em>Inga anställda schemalagda för detta skift.</em></p>
+            }
+            else
+            {
+                <ul>
+                    @foreach (var emp in shift.Employees)
+                    {
+                        <li>@emp.FullName (@emp.Role)</li>
+                    }
+                </ul>
+            }
+        </div>
+    }
+}
+
+@code {
+    private List<ShiftWithEmployeesDto>? shifts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        shifts = await Http.GetFromJsonAsync<List<ShiftWithEmployeesDto>>("api/shifts");
+    }
+
+    private string GetShiftColor(string shiftType)
+    {
+        return shiftType switch
+        {
+            "Dag" => "#D4EDDA",     // ljusgrön
+            "Kväll" => "#FFF3CD",   // ljusgul
+            "Natt" => "#D1ECF1",    // ljusblå
+            _ => "#F8F9FA"          // neutral grå/vit
+        };
+    }
+
+    public class ShiftWithEmployeesDto
+    {
+        public int ShiftID { get; set; }
+        public DateTime ShiftDate { get; set; }
+        public string StartTime { get; set; } = string.Empty;
+        public string EndTime { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string ShiftType { get; set; } = string.Empty; // 👈 viktig!
+        public List<EmployeeDto> Employees { get; set; } = new List<EmployeeDto>();
+    }
+
+    public class EmployeeDto
+    {
+        public int EmployeeID { get; set; }
+        public string FullName { get; set; } = string.Empty;
+        public string Role { get; set; } = string.Empty;
+    }
+}

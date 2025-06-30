@@ -1,0 +1,56 @@
+@page "/schedules"
+@inject HttpClient Http
+
+<h3>Schedules</h3>
+
+@if (schedules == null)
+{
+    <p><em>Loading...</em></p>
+}
+else if (schedules.Count == 0)
+{
+    <p><em>No schedules found.</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Employee ID</th>
+                <th>Shift ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var schedule in schedules)
+            {
+                <tr>
+                    <td>@schedule.EmployeeID</td>
+                    <td>@schedule.ShiftID</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Schedule>? schedules;
+
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            schedules = await Http.GetFromJsonAsync<List<Schedule>>("http://localhost:5082/api/schedules");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading schedules: {ex.Message}");
+        }
+    }
+
+    public class Schedule
+    {
+        public int ScheduleID { get; set; }
+        public int EmployeeID { get; set; }
+        public int ShiftID { get; set; }
+    }
+}
