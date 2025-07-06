@@ -2,6 +2,7 @@
 @inject HttpClient Http
 
 <style>
+    /* -------- Layout & Containers -------- */
     .week-container {
         display: flex;
         gap: 10px;
@@ -12,10 +13,10 @@
     .day-column {
         min-width: 200px;
         flex-shrink: 0;
-        border: 1px solid #ffffff;
+        border: 1px solid #ddd;
         border-radius: 8px;
         padding: 10px;
-        background-color: #ffffff;
+        background-color: #fff;
     }
 
     .day-column h4 {
@@ -26,34 +27,88 @@
     }
 
     .shift-card {
-        background-color: #ffffff;
-        border: 1px solid #ffffff;
-        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.6);
+        border-radius: 8px;
         padding: 10px;
         margin-bottom: 10px;
-        box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8px);
     }
 
-    .shift-card h3 {
-        font-size: 14px;
-        margin: 0 0 5px;
+    /* -------- Employees -------- */
+    .employees-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 8px;
     }
 
-    ul {
-        padding-left: 20px;
+    .employee-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: 8px;
+        padding: 8px 12px;
+        font-size: 16px;  /* ⬆️ Större text */
+        font-weight: 500;
+        box-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+
+    .role-box {
+        background-color: #2e90ff;
+        border-radius: 8px;
+        padding: 4px 10px;
+        font-weight: 500;
+        font-size: 14px;  /* ⬆️ Större text */
+        color: #ffffff;
+        white-space: nowrap;
+        margin-left: 12px;
+    }
+
+    /* -------- Month navigation -------- */
+    .month-navigation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 2rem;
+    }
+
+    .month-navigation button {
+        background-color: #ffffff;
+        color: #000000;
+        border: none;
+        font-size: 1.5rem;
+        padding: 8px 16px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .month-text {
+        font-size: 1rem;
+        font-style: italic;
+        margin: 0;
     }
 </style>
 
 <h2>Skift och Anställda</h2>
 
-@if (groupedShifts.Count == 0)
+<!-- 🔄 Månadsnavigering -->
+<div class="month-navigation">
+    <button @onclick="PreviousMonth">&lt;</button>
+    <h3 class="month-text">@currentMonthName @currentYear</h3>
+    <button @onclick="NextMonth">&gt;</button>
+</div>
+
+@if (filteredGroupedShifts.Count == 0)
 {
-    <p><em>Laddar...</em></p>
+    <p><em>Inga skift för denna månad.</em></p>
 }
 else
 {
     <div class="week-container">
-        @foreach (var day in groupedShifts)
+        @foreach (var day in filteredGroupedShifts)
         {
             <div class="day-column">
                 <h4>@day.Key.ToString("dddd", new System.Globalization.CultureInfo("sv-SE"))<br />@day.Key.ToShortDateString()</h4>
@@ -61,22 +116,21 @@ else
                 @foreach (var shift in day.Value)
                 {
                     <div class="shift-card" style="background-color:@GetShiftColor(shift.ShiftType);">
-                        <h3>@shift.Description<br />(@shift.StartTime - @shift.EndTime)</h3>
-                        <p><strong>Typ:</strong> @shift.ShiftType</p>
-                        <p><strong>Anställda:</strong></p>
-
                         @if (shift.Employees.Count == 0)
                         {
                             <p><em>Inga anställda.</em></p>
                         }
                         else
                         {
-                            <ul>
+                            <div class="employees-container">
                                 @foreach (var emp in shift.Employees)
                                 {
-                                    <li>@emp.FullName (@emp.Role)</li>
+                                    <div class="employee-box">
+                                        <span>@emp.FullName — (@shift.StartTime - @shift.EndTime)</span>
+                                        <span class="role-box">@emp.Role</span>
+                                    </div>
                                 }
-                            </ul>
+                            </div>
                         }
                     </div>
                 }
@@ -88,6 +142,12 @@ else
 @code {
     private List<ShiftWithEmployeesDto>? shifts;
     private Dictionary<DateTime, List<ShiftWithEmployeesDto>> groupedShifts = new();
+    private Dictionary<DateTime, List<ShiftWithEmployeesDto>> filteredGroupedShifts = new();
+
+    private int currentYear;
+    private int currentMonth;
+
+    private string currentMonthName => new System.Globalization.CultureInfo("sv-SE").DateTimeFormat.GetMonthName(currentMonth);
 
     protected override async Task OnInitializedAsync()
     {
@@ -98,20 +158,83 @@ else
             groupedShifts = shifts
                 .GroupBy(s => s.ShiftDate.Date)
                 .OrderBy(g => g.Key)
-                .ToDictionary(g => g.Key, g => g.ToList());
+                .ToDictionary(
+                    g => g.Key,
+                    g => g
+                        .GroupBy(s => new { s.StartTime, s.EndTime })
+                        .Select(group => new ShiftWithEmployeesDto
+                        {
+                            ShiftDate = g.Key,
+                            StartTime = group.Key.StartTime,
+                            EndTime = group.Key.EndTime,
+                            ShiftType = group.First().ShiftType,
+                            Description = group.First().Description,
+                            Employees = group
+                                .SelectMany(s => s.Employees)
+                                .GroupBy(e => e.EmployeeID)
+                                .Select(eGrp => eGrp.First())
+                                .ToList()
+                        })
+                        .OrderBy(s => TimeSpan.TryParse(s.StartTime, out var t) ? t : TimeSpan.Zero)
+                        .ToList()
+                );
         }
+
+        var now = DateTime.Now;
+        currentYear = now.Year;
+        currentMonth = now.Month;
+
+        FilterShiftsByMonth();
+    }
+
+    private void FilterShiftsByMonth()
+    {
+        filteredGroupedShifts = groupedShifts
+            .Where(g => g.Key.Year == currentYear && g.Key.Month == currentMonth)
+            .OrderBy(g => g.Key)
+            .ToDictionary(g => g.Key, g => g.Value);
+    }
+
+    private void PreviousMonth()
+    {
+        if (currentMonth == 1)
+        {
+            currentMonth = 12;
+            currentYear--;
+        }
+        else
+        {
+            currentMonth--;
+        }
+        FilterShiftsByMonth();
+    }
+
+    private void NextMonth()
+    {
+        if (currentMonth == 12)
+        {
+            currentMonth = 1;
+            currentYear++;
+        }
+        else
+        {
+            currentMonth++;
+        }
+        FilterShiftsByMonth();
     }
 
     private string GetShiftColor(string shiftType)
     {
-        return shiftType switch
+        return NormalizeShiftType(shiftType) switch
         {
-            "Dag" => "#D4EDDA",     // Ljusgrön
-            "Kväll" => "#FFF3CD",   // Ljusgul
-            "Natt" => "#D1ECF1",    // Ljusblå
-            _ => "#F8F9FA"          // Neutral grå/vit
+            "dag" => "#f0faff",  // Ljusblå
+            "kväll" => "#FFF3CD", // Ljusgul
+            "natt" => "#eaf0ff",  // Ljuslila/blå
+            _ => "#F8F9FA"
         };
     }
+
+    private string NormalizeShiftType(string shiftType) => shiftType?.Trim().ToLower() ?? "";
 
     public class ShiftWithEmployeesDto
     {

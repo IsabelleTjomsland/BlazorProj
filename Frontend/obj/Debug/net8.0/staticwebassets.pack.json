@@ -25,6 +25,14 @@
       "PackagePath": "staticwebassets\\css\\bootstrap\\bootstrap.min.css.map"
     },
     {
+      "Id": "C:\\Bemanning_System\\Frontend\\wwwroot\\day.svg",
+      "PackagePath": "staticwebassets\\day.svg"
+    },
+    {
+      "Id": "C:\\Bemanning_System\\Frontend\\wwwroot\\evening.svg",
+      "PackagePath": "staticwebassets\\evening.svg"
+    },
+    {
       "Id": "C:\\Bemanning_System\\Frontend\\wwwroot\\favicon.png",
       "PackagePath": "staticwebassets\\favicon.png"
     },
@@ -35,6 +43,10 @@
     {
       "Id": "C:\\Bemanning_System\\Frontend\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Bemanning_System\\Frontend\\wwwroot\\night.svg",
+      "PackagePath": "staticwebassets\\night.svg"
     },
     {
       "Id": "C:\\Bemanning_System\\Frontend\\wwwroot\\sample-data\\weather.json",

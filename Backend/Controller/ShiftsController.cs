@@ -32,7 +32,6 @@ namespace Bemanning_System.Backend.Controllers
             var result = shifts.Select(s =>
             {
                 var shiftType = GetShiftType(s.StartTime);
-                var color = GetColorForShiftType(shiftType);
 
                 return new ShiftWithEmployeesDto
                 {
@@ -42,7 +41,6 @@ namespace Bemanning_System.Backend.Controllers
                     EndTime = FormatTime(s.EndTime),
                     Description = s.Description,
                     ShiftType = shiftType,
-                    Color = color,
                     Employees = s.Schedules
                         .Where(sc => sc.Employee != null)
                         .Select(sc => new EmployeeCreateDto
@@ -65,26 +63,16 @@ namespace Bemanning_System.Backend.Controllers
 
         private string GetShiftType(TimeSpan startTime)
         {
-            if (startTime.Hours >= 5 && startTime.Hours < 12)
-                return "Morgon"; // 05:00 - 12:00
-            else if (startTime.Hours >= 12 && startTime.Hours < 17)
-                return "Dag";    // 12:00 - 17:00
-            else if (startTime.Hours >= 17 && startTime.Hours < 22)
-                return "Kväll";  // 17:00 - 22:00
-            else
-                return "Natt";   // 22:00 - 05:00
-        }
+            // Dag: 05:00–16:59
+            if (startTime >= TimeSpan.FromHours(5) && startTime < TimeSpan.FromHours(17))
+                return "Dag";
 
-        private string GetColorForShiftType(string shiftType)
-        {
-            return shiftType switch
-            {
-                "Morgon" => "#FFD700", // Guldgul
-                "Dag" => "#87CEFA",    // Ljusblå
-                "Kväll" => "#FF8C00",  // Mörkorange
-                "Natt" => "#2F4F4F",   // Mörkgrå
-                _ => "#FFFFFF",        // Vit fallback
-            };
+            // Kväll: 17:00–21:59
+            if (startTime >= TimeSpan.FromHours(17) && startTime < TimeSpan.FromHours(22))
+                return "Kväll";
+
+            // Natt: 22:00–04:59
+            return "Natt";
         }
     }
 
@@ -95,8 +83,7 @@ namespace Bemanning_System.Backend.Controllers
         public string StartTime { get; set; } = string.Empty;
         public string EndTime { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
-        public string ShiftType { get; set; } = string.Empty; // 👈 Typ av skift
-        public string Color { get; set; } = string.Empty;     // 👈 Färgkod baserat på typ
+        public string ShiftType { get; set; } = string.Empty;
         public List<EmployeeCreateDto> Employees { get; set; } = new List<EmployeeCreateDto>();
     }
 
