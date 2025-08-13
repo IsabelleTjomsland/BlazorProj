@@ -1,0 +1,7 @@
+@page "/profile"
+@using Microsoft.AspNetCore.Authorization
+@attribute [Authorize(Roles = "Employee")]
+@layout EmployeeLayout
+
+<h3>Min profil</h3>
+<p>Här kan anställda se sin profilinformation.</p>

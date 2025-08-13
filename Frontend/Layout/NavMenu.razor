@@ -1,31 +1,69 @@
-﻿<div class="top-row ps-3 navbar navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">Bemanningssystem</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
+﻿@using Microsoft.AspNetCore.Components.Authorization
+@using frontend.Layout
 
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="employees">
-                 Employees
-            </NavLink>
+<AuthorizeView>
+    <Authorized Context="authContext">
+        <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+            <nav class="flex-column">
+
+                @* Gemensamma länkar för alla inloggade *@
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="employees" Match="NavLinkMatch.All">
+                        <span class="oi oi-people" aria-hidden="true"></span> Employees
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="schedules">
+                        <span class="oi oi-calendar" aria-hidden="true"></span> Schedules
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="shifts">
+                        <span class="oi oi-clock" aria-hidden="true"></span> Shifts
+                    </NavLink>
+                </div>
+
+                @* Endast Employee *@
+                <AuthorizeView Roles="Employee">
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="profile">
+                            <span class="oi oi-person" aria-hidden="true"></span> Min profil
+                        </NavLink>
+                    </div>
+                </AuthorizeView>
+
+                @* Endast Admin *@
+                <AuthorizeView Roles="Admin">
+                    <div class="nav-item px-3">
+                        <NavLink class="nav-link" href="register">
+                            <span class="oi oi-plus" aria-hidden="true"></span> Register Employee
+                        </NavLink>
+                    </div>
+                </AuthorizeView>
+
+                @* Logga ut finns för alla inloggade *@
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="logout">
+                        <span class="oi oi-account-logout" aria-hidden="true"></span> Logga ut
+                    </NavLink>
+                </div>
+
+            </nav>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="schedules">
-                 Schedules
-            </NavLink>
+    </Authorized>
+
+    <NotAuthorized>
+        <div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+            <nav class="flex-column">
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="login">
+                        <span class="oi oi-account-login" aria-hidden="true"></span> Logga in
+                    </NavLink>
+                </div>
+            </nav>
         </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="shifts">
-                 Shifts
-            </NavLink>
-        </div>
-    </nav>
-</div>
+    </NotAuthorized>
+</AuthorizeView>
 
 @code {
     private bool collapseNavMenu = true;

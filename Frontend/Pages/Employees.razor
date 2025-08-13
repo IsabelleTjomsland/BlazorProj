@@ -1,7 +1,11 @@
 @page "/employees"
 @inject HttpClient Http
+@inject NavigationManager NavManager
+@inject IJSRuntime JSRuntime
 
 <h3>Employees</h3>
+
+<button class="custom-add-button" @onclick="NavigateToAddEmployee">Add Employee</button>
 
 @if (employees == null)
 {
@@ -32,7 +36,27 @@ else
             }
         </tbody>
     </table>
+
 }
+
+<style>
+    .custom-add-button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 8px;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-bottom: 1rem;
+    }
+
+    .custom-add-button:hover {
+        background-color: #0056b3;
+    }
+
+</style>
 
 @code {
     private List<Employee>? employees;
@@ -41,13 +65,29 @@ else
     {
         try
         {
-           employees = await Http.GetFromJsonAsync<List<Employee>>("http://localhost:5082/api/employees");
-
+            employees = await Http.GetFromJsonAsync<List<Employee>>("http://localhost:5082/api/employees");
         }
         catch (Exception ex)
         {
             Console.WriteLine($"Error loading employees: {ex.Message}");
         }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && employees != null)
+        {
+            var roleCounts = employees
+                .GroupBy(e => e.Role)
+                .ToDictionary(g => g.Key, g => g.Count());
+
+            await JSRuntime.InvokeVoidAsync("drawRoleChart", roleCounts);
+        }
+    }
+
+    private void NavigateToAddEmployee()
+    {
+        NavManager.NavigateTo("/add-employee");
     }
 
     public class Employee

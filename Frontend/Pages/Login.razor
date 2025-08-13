@@ -1,0 +1,53 @@
+@page "/login"
+
+@using Frontend.Authentication
+@using Microsoft.AspNetCore.Components.Authorization
+@using Bemanning_System.Frontend.DTO
+@inject NavigationManager Navigation
+@inject AuthenticationStateProvider AuthStateProvider
+@inject IAuthService AuthService
+@using Bemanning_System.Frontend.Services
+
+
+
+<h3>Login</h3>
+
+@if (!string.IsNullOrEmpty(ErrorMessage))
+{
+    <div style="color:red">@ErrorMessage</div>
+}
+
+<EditForm Model="loginModel" OnValidSubmit="HandleLogin">
+    <InputText @bind-Value="loginModel.Email" placeholder="Email" />
+    <InputText @bind-Value="loginModel.Password" placeholder="Password" type="password" />
+    <button type="submit">Login</button>
+</EditForm>
+
+@code {
+    private LoginModel loginModel = new();
+    private string? ErrorMessage;
+
+    private async Task HandleLogin()
+    {
+        // Anta att detta returnerar ett objekt med en JWT-token
+        var employee = await AuthService.LoginAsync(loginModel.Email, loginModel.Password);
+        if (employee != null && !string.IsNullOrWhiteSpace(employee.Token))
+        {
+            // Casta till din custom provider
+            var customAuthStateProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+            await customAuthStateProvider.MarkUserAsAuthenticated(employee.Token);
+
+            Navigation.NavigateTo("/");
+        }
+        else
+        {
+            ErrorMessage = "Fel e-post eller lösenord.";
+        }
+    }
+
+    public class LoginModel
+    {
+        public string Email { get; set; } = string.Empty;
+        public string Password { get; set; } = string.Empty;
+    }
+}

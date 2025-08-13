@@ -1,0 +1,94 @@
+@page "/register"
+@inject HttpClient Http
+@inject NavigationManager NavManager
+@using System.ComponentModel.DataAnnotations
+
+<h3>Registrera ny anställd</h3>
+
+<EditForm Model="@employee" OnValidSubmit="HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <div>
+        <label>Förnamn:</label>
+        <InputText @bind-Value="employee.FirstName" />
+    </div>
+    <div>
+        <label>Efternamn:</label>
+        <InputText @bind-Value="employee.LastName" />
+    </div>
+    <div>
+        <label>Roll:</label>
+        <InputText @bind-Value="employee.Role" />
+    </div>
+    <div>
+        <label>Email:</label>
+        <InputText @bind-Value="employee.Email" />
+    </div>
+    <div>
+        <label>Lösenord:</label>
+        <InputText @bind-Value="password" type="password" />
+    </div>
+
+    <button type="submit">Registrera</button>
+</EditForm>
+
+@if (!string.IsNullOrEmpty(message))
+{
+    <p>@message</p>
+}
+
+@code {
+    private EmployeeRegisterModel employee = new();
+    private string password = "";
+    private string message = "";
+
+    public class EmployeeRegisterModel
+    {
+        [Required(ErrorMessage = "Förnamn krävs")]
+        public string FirstName { get; set; } = "";
+
+        [Required(ErrorMessage = "Efternamn krävs")]
+        public string LastName { get; set; } = "";
+
+        [Required(ErrorMessage = "Roll krävs")]
+        public string Role { get; set; } = "";
+
+        [Required(ErrorMessage = "Email krävs")]
+        [EmailAddress(ErrorMessage = "Ogiltig e-postadress")]
+        public string Email { get; set; } = "";
+    }
+
+    private async Task HandleValidSubmit()
+    {
+        var registerData = new
+        {
+            employee.FirstName,
+            employee.LastName,
+            employee.Role,
+            employee.Email,
+            Password = password
+        };
+
+        try
+        {
+            var response = await Http.PostAsJsonAsync("api/auth/register", registerData);
+
+            if (response.IsSuccessStatusCode)
+            {
+                message = "Anställd registrerad!";
+                // Navigera till annan sida om du vill:
+                // NavManager.NavigateTo("/employees");
+            }
+            else
+            {
+                var errorResponse = await response.Content.ReadAsStringAsync();
+                message = $"Fel vid registrering: {errorResponse}";
+            }
+        }
+        catch (Exception ex)
+        {
+            message = $"Fel: {ex.Message}";
+        }
+    }
+}

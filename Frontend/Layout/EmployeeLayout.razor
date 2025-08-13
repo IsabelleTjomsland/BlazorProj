@@ -1,0 +1,113 @@
+@inherits LayoutComponentBase
+@using Microsoft.AspNetCore.Components.Authorization
+
+<style>
+.employee-page {
+    display: flex;
+    height: 100vh;
+}
+
+.employee-sidebar {
+    background: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+    width: 250px;
+    color: white;
+    flex-shrink: 0;
+}
+
+.nav-scrollable {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-top: 1rem;
+}
+
+nav.flex-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.nav-item {
+    padding: 0.5rem 1rem;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background-color: #155a9c;
+    color: #fff;
+}
+
+.employee-main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+}
+
+.top-row {
+    background-color: #e9ecef;
+    padding: 1rem;
+    border-bottom: 1px solid #dee2e6;
+    font-weight: 500;
+}
+
+.content {
+    padding: 1rem 2rem;
+    flex-grow: 1;
+}
+</style>
+
+<div class="employee-page">
+    <div class="employee-sidebar">
+        <div class="nav-scrollable">
+            <nav class="flex-column">
+                <div class="nav-item">
+                    <NavLink class="nav-link" href="shifts">
+                        <span class="oi oi-clock"></span> Shifts
+                    </NavLink>
+                </div>
+                <div class="nav-item">
+                    <NavLink class="nav-link" href="profile">
+                        <span class="oi oi-person"></span> Min profil
+                    </NavLink>
+                </div>
+                <div class="nav-item">
+                    <NavLink class="nav-link" href="logout">
+                        <span class="oi oi-account-logout"></span> Logga ut
+                    </NavLink>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main class="employee-main">
+        <div class="top-row">
+            <AuthorizeView Context="ctx">
+                <Authorized>
+                    <span>
+                        Inloggad som: <strong>@ctx.User.Identity?.Name</strong>
+                    </span>
+                </Authorized>
+                <NotAuthorized>
+                    <span>Ej inloggad</span>
+                </NotAuthorized>
+            </AuthorizeView>
+        </div>
+
+        <article class="content">
+            @Body
+        </article>
+    </main>
+</div>

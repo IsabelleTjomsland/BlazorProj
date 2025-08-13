@@ -26,12 +26,40 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Bemanning_System/Frontend/Layout/EmployeeLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XEVtcGxveWVlTGF5b3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Bemanning_System/Frontend/Layout/RoleBasedLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = TGF5b3V0XFJvbGVCYXNlZExheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Bemanning_System/Frontend/Pages/EmployeeComponents/AddEmployee.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVDb21wb25lbnRzXEFkZEVtcGxveWVlLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Bemanning_System/Frontend/Pages/Employees.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Bemanning_System/Frontend/Pages/EmployeeView/Profile.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW1wbG95ZWVWaWV3XFByb2ZpbGUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Bemanning_System/Frontend/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9naW4ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Bemanning_System/Frontend/Pages/Logout.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTG9nb3V0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Bemanning_System/Frontend/Pages/Overview.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcT3ZlcnZpZXcucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Bemanning_System/Frontend/Pages/Register.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUmVnaXN0ZXIucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Bemanning_System/Frontend/Pages/Schedules.razor]

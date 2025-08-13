@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "s5WAJC11EVBvUXhH2yZ+yTJR2Yx8meEWncjh+xpors8=",
+  "Hash": "cDj2k1jcetZqiDnT+qq8rqu11OSrlHjxASNYezbD1MI=",
   "Source": "frontend",
   "BasePath": "/",
   "Mode": "Root",
@@ -55,6 +55,25 @@
       "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\8.0.17\\build\\net8.0\\blazor.webassembly.js"
     },
     {
+      "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\webcil\\Blazored.LocalStorage.wasm"
+    },
+    {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -71,7 +90,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\dotnet.js"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\dotnet.js"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
@@ -90,15 +109,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\dotnet.js.map"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\dotnet.js.map"
     },
     {
-      "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.17.b342y3isvy.js",
+      "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.19.oi085mh8sl.js",
       "SourceId": "frontend",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.17.b342y3isvy.js",
+      "RelativePath": "_framework/dotnet.native.8.0.19.oi085mh8sl.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -109,7 +128,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\dotnet.native.js"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\dotnet.native.js"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
@@ -128,15 +147,15 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\dotnet.native.wasm"
     },
     {
-      "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.17.1mvquaiy0n.js",
+      "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.19.87rzyk42fd.js",
       "SourceId": "frontend",
       "SourceType": "Computed",
       "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
       "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.17.1mvquaiy0n.js",
+      "RelativePath": "_framework/dotnet.runtime.8.0.19.87rzyk42fd.js",
       "AssetKind": "Build",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -147,7 +166,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\dotnet.runtime.js"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
@@ -166,7 +185,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\dotnet.runtime.js.map"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\frontend.pdb",
@@ -223,7 +242,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\icudt_CJK.dat"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
@@ -242,7 +261,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\icudt_EFIGS.dat"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
@@ -261,7 +280,7 @@
       "AssetTraitValue": "native",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Program Files\\dotnet\\packs\\Microsoft.NETCore.App.Runtime.Mono.browser-wasm\\8.0.17\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
+      "OriginalItemSpec": "C:\\Users\\isabe\\.nuget\\packages\\microsoft.netcore.app.runtime.mono.browser-wasm\\8.0.19\\runtimes\\browser-wasm\\native\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.wasm",
@@ -281,6 +300,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\webcil\\Microsoft.AspNetCore.Authorization.wasm"
+    },
+    {
+      "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.wasm",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.wasm",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "WasmResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\webcil\\Microsoft.AspNetCore.Components.Authorization.wasm"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.wasm",
@@ -3988,6 +4026,25 @@
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\mscorlib.wasm"
     },
     {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\11znk8mi1w.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
+    },
+    {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\13yuo4m1h1.gz",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -4024,25 +4081,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.Extensions.Configuration.FileExtensions.wasm"
-    },
-    {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\1mvquaiy0n.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.8.0.17.1mvquaiy0n.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.17.1mvquaiy0n.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.17.1mvquaiy0n.js"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\1nnrolave0.gz",
@@ -4672,25 +4710,6 @@
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ComponentModel.DataAnnotations.wasm"
     },
     {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\77vx5t7dna.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
-    },
-    {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\7avq0fpt5f.gz",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -4898,6 +4917,44 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Private.CoreLib.wasm"
+    },
+    {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\87rzyk42fd.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.runtime.8.0.19.87rzyk42fd.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.19.87rzyk42fd.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.8.0.19.87rzyk42fd.js"
+    },
+    {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\8aus4clt2e.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\8drnzzu8jd.gz",
@@ -5128,6 +5185,25 @@
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.ServiceModel.Web.wasm"
     },
     {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\9czb2e5o5y.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.map.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
+    },
+    {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\9kwbur8x7v.gz",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -5185,6 +5261,25 @@
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.Http.wasm"
     },
     {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\adlyzgo3vj.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.wasm"
+    },
+    {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\ajhsz1yskf.gz",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -5240,25 +5335,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.IO.IsolatedStorage.wasm"
-    },
-    {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\b342y3isvy.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.8.0.17.b342y3isvy.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.17.b342y3isvy.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.17.b342y3isvy.js"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\b3i3lvbji5.gz",
@@ -5601,6 +5677,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Reflection.wasm"
+    },
+    {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\fmhwj45xro.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\fmqx3o7ybm.gz",
@@ -6002,25 +6097,6 @@
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.wasm"
     },
     {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\ioa8p5ycc4.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.runtime.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.runtime.js.map"
-    },
-    {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\iw4xhdzejt.gz",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -6076,25 +6152,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.AppContext.wasm"
-    },
-    {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\jiks2hf6b1.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.native.wasm.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.wasm"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\jj3v9f1alt.gz",
@@ -6363,6 +6420,25 @@
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Globalization.wasm"
     },
     {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\mk7iokdpjv.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
+    },
+    {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\mljv0jg0zn.gz",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -6399,6 +6475,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Collections.Concurrent.wasm"
+    },
+    {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\ms7k8t6oe6.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_CJK.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\n0ehx2s0si.gz",
@@ -6496,6 +6591,25 @@
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.NameResolution.wasm"
     },
     {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\o8x1gv9sbv.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.wasm.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Blazored.LocalStorage.wasm"
+    },
+    {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\obhj3a8w3j.gz",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -6532,6 +6646,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Diagnostics.Tracing.wasm"
+    },
+    {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\oi085mh8sl.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/dotnet.native.8.0.19.oi085mh8sl.js.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.19.oi085mh8sl.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.native.8.0.19.oi085mh8sl.js"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\okovf3xv5t.gz",
@@ -6798,25 +6931,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.wasm"
-    },
-    {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\roylxjlu12.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_CJK.dat"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\rqrj06noz0.gz",
@@ -7351,25 +7465,6 @@
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Net.HttpListener.wasm"
     },
     {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\x5dm2d940f.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js"
-    },
-    {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\x6jx1eza9b.gz",
       "SourceId": "frontend",
       "SourceType": "Computed",
@@ -7501,44 +7596,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Web.wasm"
-    },
-    {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\xu6reael03.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/icudt_no_CJK.dat.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_no_CJK.dat"
-    },
-    {
-      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\xv410cmc4k.gz",
-      "SourceId": "frontend",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/dotnet.js.map.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "AssetMergeBehavior": "",
-      "AssetMergeSource": "",
-      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\dotnet.js.map"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\xxdpz8w8q7.gz",
@@ -7691,6 +7748,25 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\System.Globalization.Extensions.wasm"
+    },
+    {
+      "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\z9vclcw89e.gz",
+      "SourceId": "frontend",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/icudt_EFIGS.dat.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Bemanning_System\\Frontend\\bin\\Debug\\net8.0\\wwwroot\\_framework\\icudt_EFIGS.dat"
     },
     {
       "Identity": "C:\\Bemanning_System\\Frontend\\obj\\Debug\\net8.0\\compressed\\z9vr3y2hsw.gz",

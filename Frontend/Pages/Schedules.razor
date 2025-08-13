@@ -1,4 +1,8 @@
 @page "/schedules"
+
+@attribute [Authorize(Roles = "Admin")]
+@layout MainLayout
+@using Microsoft.AspNetCore.Authorization
 @inject HttpClient Http
 
 <h3>Schedules</h3>

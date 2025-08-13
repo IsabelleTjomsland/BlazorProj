@@ -1,0 +1,53 @@
+@inherits LayoutComponentBase
+@using Microsoft.AspNetCore.Components.Authorization
+@using frontend.Layout
+@using System.Security.Claims
+
+@inject AuthenticationStateProvider AuthProvider
+
+@if (layoutToRender is not null)
+{
+    <LayoutView Layout="@layoutToRender">
+        @Body
+    </LayoutView>
+}
+else
+{
+    <p>Laddar layout...</p>
+}
+
+@code {
+    private Type? layoutToRender;
+
+    protected override async Task OnInitializedAsync()
+    {
+        AuthProvider.AuthenticationStateChanged += async (task) =>
+        {
+            var authState = await task;
+            SetLayout(authState.User);
+            StateHasChanged();
+        };
+
+        var initialState = await AuthProvider.GetAuthenticationStateAsync();
+        SetLayout(initialState.User);
+    }
+
+    private void SetLayout(ClaimsPrincipal user)
+    {
+        if (user.Identity?.IsAuthenticated == true)
+        {
+            var role = user.FindFirst(ClaimTypes.Role)?.Value ?? "";
+
+            if (string.Equals(role, "Admin", StringComparison.OrdinalIgnoreCase))
+                layoutToRender = typeof(MainLayout);
+            else if (string.Equals(role, "Employee", StringComparison.OrdinalIgnoreCase))
+                layoutToRender = typeof(EmployeeLayout);
+            else
+                layoutToRender = typeof(EmployeeLayout); // fallback
+        }
+        else
+        {
+            layoutToRender = typeof(EmployeeLayout); // gästlayout
+        }
+    }
+}

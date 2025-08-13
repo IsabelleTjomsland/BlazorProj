@@ -1,0 +1,17 @@
+
+@page "/logout"
+@inject NavigationManager Navigation
+@inject IJSRuntime JS
+
+<h3>Loggar ut...</h3>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        // Ta bort JWT-token från localStorage
+        await JS.InvokeVoidAsync("localStorage.removeItem", "authToken");
+
+        // Navigera till inloggningssidan efter logout
+        Navigation.NavigateTo("login", true);
+    }
+}
